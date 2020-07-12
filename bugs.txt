@@ -1,0 +1,5 @@
+BUGS WHICH NEEDS FIXING IN VERSION 1.00 RC2b - 15.03.2005
+by flying.tux
+-Unicode is not supported
+-Received attachments aren't erased.
+-Module will not work with gzip compression turned on (found in system/preferences).

@@ -1,0 +1,222 @@
+CHANGELOG - 09.03.2005
+by flying.tux
+
+08.03.2005
+-Fixed CPanel autocreation in inbox.php.
+-Fixed several bugs in settings.php.
+-Added patch to Function SendMail in /class/email_message.php. This allows to set correctly the Return Path when PHP is set in safe mode on the server. 
+04.03.2005
+-Added Turkish Translation.
+-Optimized other translations.
+03.01.2005
+-Unicode support removed due to low compatibility.
+-Added more lang constants.
+02.01.2005
+-Fixed error in contactbook.
+30.12.2004
+-Unicode now supported.
+-Added another statistic.
+-Made small change to cpanel statistic
+-[ #1256 ] Module will now create a cpanel account automatically based on the group permissions selected.
+15.12.2004
+-Fixed "Reply" and "Forward" functions in readmail.php: original text is now shown correctly.
+10.12.2004
+-Code optimization in inbox.php.
+-Removed libmail.php which is no more used.
+07.12.2004
+-Added Brazilian-Portuguese Translation.
+02.12.2004
+-All classes moved to the /class directory.
+-Fixed a bug in contactbook.php.
+-Added a "check all" box in inbox.php.
+01.12.2004
+-The new "Nuvola" icon set is now the default one.
+30.11.2004
+-Changed "ufrom" lenght in wmfx_popsettings table from 50 to 100.
+-Minor changes to the layout of inbox.php
+29.11.2004
+-Added update script.
+-Two icons set now available:
+1."Crystal";
+2."Kids".
+"Crystal is the default one and is included in the main package.
+22.11.2004
+-The smtp password is now properly encrypted.
+-Added more statistics.
+21.11.2004
+-Added dropdown menu to admin created email.
+-Corrected several php notices.
+-Corrected attachment bug.
+20.11.2004
+-Added statistics to admin index.
+19.11.2004
+-Admin created email now supports cpanel creation.
+-The class send now makes a call to pop server when smtp requires pop first.
+18.11.2004
+-Admin created email. 
+-Subject and message now support a wider charset.
+17.11.2004
+-Erased files that were no longer needed.
+-Added files.
+-Background colors are now controled by file colors.php
+-Added a table.
+-Contacts can now be shared with users of the same group. This is controled by a group permission.
+-Added several new icons in /images.
+16.11.2004
+-Separated permissions into 2.
+-Settings are now controlled by a group permission.
+11.11.2004
+-[ #1482 ] WebMailFX case sensitivity on CPanel Fixed
+08.11.2004
+-[ #1437 ] Apostrophes in email messages fixed 50%
+-[ #1401 ] Footer Message in all sent e-mails fixed.
+-divided group permissions into 2 subtabs.
+-Added more options to group permissions.
+30.10.2004
+-Attachments is now fully functional.
+-Cleaned code. There are still several php notices. Will eventually get to them.
+28.10.2004
+-Cleaned code, several undefined vars and index's.
+-Updated help file.
+-Email quotas are now correctly updated in cpanel.
+-Added menu to change quota of emails.
+-Email account is now deleted from cpanel.
+25.10.2004
+-Added some small changes to help menu.
+-Added text field to settings.
+-Removed show right from admin.
+-Removed max attach size from admin.
+-Removed sent attachment dir in admin.
+-Added Help subtab in admin.
+-From field is now getting populated correctly
+-Added text to attachments input box in compose menu.
+-method 1 of sending is working.
+-Cleaned up code in contactbook.php
+24.10.2004
+-2 methods now work attachments.
+-Attachments are now working. At the moment it only sends one at a time.
+-Error reporting when sending works properly now. It no longer strips the xoops wrapper.
+-CPanel Theme is now correctly set in user created webmail menu.
+23.10.2004
+-Cleaned up code. Now only a few php notices remain.
+-Bug #1325; errors strip xoops wrapper. Fixed this bug.
+-Corrected error reporting for user created webmail.
+22.10.2004
+-Removed all unused code from compose.php
+-Changed database fields; removed req_auth and added ufrom.
+-Added classes to deal with attachments and their proper encoding.
+-Added from field in settings menu.
+-Added from field in group permissions.
+-Corrected popup in admin.
+21.10.2004
+-Replaced xoops smtp class with another that does work.
+-Added method 3 of sending (smtp=pop) which is now working.
+-Removed "smtp requires authentication" checkbox because new smtp class autonegotiates authentication.
+-Placed several debug visualizations. Now when you turn on debug you get a lot more info on what's happening.
+-Fixed footer message. Now it shows correctly using all methods of sending.
+-Group permissions is now fully functional.
+-Removed some options from webmail admin menu since they are now set in the permissions window.
+20.10.2004
+-Placed vars in xoops_version.
+-Placed a group permissions menu (this is only for testing purposes) on admin. It isn't working yet.
+19.10.2004
+-Removed method 3 of sending since it wouldn't work for most people.
+-Fixed "require smtp" checkbox bug which always showed up unchecked.
+-Fixed send method 2 (smtp).
+18.10.2004
+-Fixed .png transparency for Internet Explorer users.
+-Added XoopsTabs to admin menu.
+17.10.04
+-Added admin menu to list and erase user created webmail.
+15.10.04
+-Added field to settings menu "require smtp authorization". It is only visible if the send method is SMTP. This should help sort out the whole authorization problem when using SMTP method.
+-Fixed error in settings menu that was scewing up the smtp username.
+13.10.04
+Changed layout of settings menu from 2 columns to 1 column.
+12.10.04
+-Added options to user created webmail in admin menu.
+-Added options in settings menu that control user created webmail.
+-User created webmail is now fully functional.
+11.10.04
+-Added a debug option to admin menu.
+-Corrected a bug in APOP method.
+10.10.04
+-Added a index.html to /cache for security reasons.
+-send method 3 (smtp=pop) is also working. This method still requires extensive testing. Authentication mechanism is untested.
+09.10.04
+-Compose window now adjusts to send method chosen.
+-Got send method 2 (smtp) working using multiple smtp. The server authentication still needs beta testing.
+-Send method 1 (PHP mail) is also working.
+06.10.04
+-[ #1172 ] Fixed: 'when you click on SAVE in the settings menu, instead of updating that particular popserver, it will add a new one with the same info.'
+-Dropdown menu in compose window is finally getting correctly populated from DB. It will allow you to select the smtp server you want to send the email through.
+05.10.04
+-Added dropdown menu to choose smtp server option in the compose window. This option will only be displayed if the send method is set to SMTP.
+04.10.04
+-Now the settings menu adjusts to the 'send option' in the admin menu. If you select smtp in the admin menu, the settings menu will allow you to insert an smtp server for each account.
+-Added admin option to limit size of individual attachments.
+03.10.04
+-Changed directory name from WebMailFX to webmailfx. This makes coding a LOT easier because it's one less thing to mess up.
+-Changed DB table 'popsettings'. Added 4 fields; smtpserver, smtpport, smtpuname, smtppasswd.
+-Removed from admin the smtp options. They will be placed in the compose window.
+02.10.04
+-Finally got attachments to work. Now uploads to correct directory. Bug in javascript still not solved.
+29.09.2004
+-Trying to fix the mailattachment.php security hole/bug with new code in the file. Changes in
+cache/config.php. Changes to the directory structure to reflect new settings.
+-Changes by kaotik, which is working on SMTP side on:
+/admin
+index.php
+/languaguage/english
+admin.php
+main.php
+/webmailfx
+settings.php
+nlmail.php
+libmail.php
+index.php
+pop3.php
+28.09.2004
+-There's a bug in mailattach.php. By now, we came out with mailattach disabled by default
+and mailattach.php renamed to unsafe_mailattach.php
+-Added new module icon by Bassman.
+27.09.2004
+-Cleaned several undefined variables and other PHP notices. Still not 100 clean but getting there.
+-Created new options in admin menu.
+24.09.2004
+-Decision to change version numbering: stable version will get even numbering, e.g. 0.82,
+while testing version will get odd numbering, e.g. 0.83.
+-Cleaned up all license notice/credits in each PHP file.
+23.09.2004
+-Changed completely the pop3.php file. This is based on a suggestion by "kaotik";
+-Downgraded the version numbering to 0.8 according to the remaining bugs of the package;
+-A lot of code-cleaning by "kaotik";
+-Fixes to the address book redirect bug by "kaotik";
+-Moved to 0.81 according to great progress done lately;
+-Fixed uninstall bug;
+22.09.2004
+-Posted news on xoops.org;
+-Received a "Module" icon from Bassman (http://www.bassmanthemes.x8r.com/);
+-Changed icon set to a new one based on Everaldo's Crystal one (http://www.evaraldo.com);
+-Added Italian Translation;
+-Added Table prefix "wmfx_" to /sql/mysql.sql instructions. Did the same to all related
+.php files;
+-Tested with new tables prefix: appears to work;
+-Some bugs discovered:
+	*IMAP function appear to be broken and/or non-existing;
+21.09.2004
+-Some bugs discovered:
+	*Redirect problem after editing a contact in the "Address Book";
+20.09.2004
+-Installed the module: it appears to work
+19.09.2004
+-Applied some changes suggested on the "Gererstorfer" forum by "frischfleisch":
+	+ Changed line 40 of admin/index.php to:
+	  redirect_header(XOOPS_URL."/admin.php",1,_AM_DBUPDATED);	
+	+ Changed line 128 in /settings.php to
+	  <form method=post action='settings.php' name=formpost>
+	+ Changed the lenght of the password field in the sql file to:
+	  passwd varchar(30) default NULL,
+18.09.2004
+-Downloaded original version of WebMail module from http://geresrstorfer.net
+-Started testing it: it apperas to be broken.
